@@ -1,0 +1,11 @@
+---
+layout: base
+head: tag
+---
+{%- include this_tag -%}
+<header id="tag-intro">
+	<h2 id="tag-title">{{ this_tag.name.full[page.lang] }}</h2>
+	{{ content }}
+</header>
+{%- assign posts = site.tags[this_tag_id] -%}
+{%- include index.html posts=posts -%}

@@ -1,0 +1,83 @@
+# Site settings
+title: Sanctum
+author: David Joaquín Shourabi Porcel
+baseurl: "/blog"
+url: "http://www.davidjsp.eu"
+email:
+    author: david@davidjsp.eu
+    comments: david@davidjsp.eu
+    site: david@davidjsp.eu
+launchdate: 2018-02-05
+
+# Build settings
+strict_front_matter: true
+excerpt_separator: <!--more-->
+compress_html:
+    clippings: all
+    comments: all
+markdown: kramdown
+sass:
+    style: compressed
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+permalink: /:categories/:title
+
+defaults:
+    -
+        scope:
+            path: "es"
+        values:
+            lang: "es"
+    -
+        scope:
+            path: "en"
+        values:
+            lang: "en"
+    -
+        scope:
+            path: "de"
+        values:
+            lang: "de"
+    -
+        scope:
+            path: "es/*/index.html"
+        values:
+            layout: "category"
+    -
+        scope:
+            path: "en/*/index.html"
+        values:
+            layout: "category"
+    -
+        scope:
+            path: "de/*/index.html"
+        values:
+            layout: "category"
+    -
+        scope:
+            path: "tags"
+        values:
+            layout: "tag"
+    -
+        scope:
+            path: "tags/es"
+        values:
+            lang: "es"
+    -
+        scope:
+            path: "tags/en"
+        values:
+            lang: "en"
+    -
+        scope:
+            path: "tags/de"
+        values:
+            lang: "de"
+
+exclude:
+    - Gemfile
+    - Gemfile.lock
+    - TODO.md
+    - .sass-cache

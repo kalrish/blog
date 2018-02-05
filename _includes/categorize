@@ -1,0 +1,10 @@
+{%- for category in include.categories.subcategories -%}
+	{% if category.id == include.ids.first -%}
+		{%- assign this_category = category -%}
+		{%- assign this_category_id = category.id -%}
+		{%- assign categories = categories | push: this_category -%}
+		{%- assign categorize_category_ids = include.ids | shift -%}
+		{%- include categorize categories=category ids=categorize_category_ids -%}
+		{%- break -%}
+	{%- endif -%}
+{%- endfor -%}

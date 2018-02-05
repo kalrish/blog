@@ -1,0 +1,61 @@
+---
+layout: base
+head: title
+---
+<article id="post" lang="{{ page.lang }}">
+	<header id="post-header">
+		<h2 id="post-title">{{ page.title }}</h2>
+		<div id="post-headline">
+			<address id="post-author"><a rel="author" href="/{{ page.lang }}/home">{{ site.author }}</a></address>
+			<time id="post-date" datetime="{{ page.date | date_to_xmlschema }}">
+				{%- include date/full date=page.date lang=page.lang -%}
+			</time>
+		</div>
+	</header>
+	{%- assign notes = "" | split: '' -%}
+	<div id="post-content">
+		{%- assign parts = content | split: '<note>' -%}
+		{%- assign note_number = 1 -%}
+		{% include post/output.html parts=parts -%}
+	</div>
+	{%- unless notes.size == 0 %}
+		<section id="footnotes">
+			<h3>{{ site.data.i18n.footnotes[page.lang] }}</h3>
+			<ol id="footnotes-list">
+				{%- for note in notes %}
+					<li id="note:{{ forloop.index }}"><span>{{ note }}</span><a class="footnote-goto-reference-link" href="#note-ref:{{ forloop.index }}">&#8617;</a></li>
+				{%- endfor %}
+			</ol>
+		</section>
+	{%- endunless -%}
+	{%- unless page.tags.size == 0 %}
+		<section id="tags">
+			<h3>{{ site.data.i18n.tags[page.lang] }}</h3>
+			<nav id="tags-list">
+				{%- include list_tags.html tags=page.tags -%}
+			</nav>
+		</section>
+	{%- endunless -%}
+	{% if page.comments -%}
+		<section id="comments">
+			<h3>{{ site.data.i18n.comments[page.lang] }}</h3>
+			{% if site.data.comments[page.title] -%}
+				<ul>
+					{%- for comment in site.data.comments[page.title] -%}
+						<li>
+							<article class="comment">
+								<header class="comment-header">
+									<address><a rel="author">{{ comment.author }}</a></address>, {% comment %}{{ site.data.i18n.date_start[page.lang] }} {% endcomment %}<time class="comment-date" datetime="{{ comment.date | date_to_xmlschema }}">{%- include date/full date=comment.date lang=page.lang -%}</time>
+								</header>
+								{% include comments/{{ comment.id }}.html %}
+							</article>
+						</li>
+					{%- endfor -%}
+				</ul>
+			{%- else -%}
+				<p id="no-comments-sofar">{{ site.data.i18n.no_comments[page.lang] }}.</p>
+			{%- endif %}
+			<p id="send-comment"><a id="send-comment-link" href="mailto:{{ site.email.comments }}?subject={{ "Comment on " | append: page.title | uri_escape }}">{{ site.data.i18n.send_comment_per_email[page.lang] }}</a>. {{ site.data.i18n.do_not_change_subject[page.lang] }}.</p>
+		</section>
+	{% endif -%}
+</article>

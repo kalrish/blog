@@ -1,0 +1,28 @@
+#post-headline {
+	margin-top: 13px;
+}
+
+#post-author {
+	display: none;
+}
+
+#post-content a:hover, #send-comment-link:hover {
+	text-decoration: underline;
+}
+
+@media (max-width: 1150px) {
+	.note-ref-side {
+		display: none;
+	}
+	.sidenote {
+		display: none;
+	}
+}
+@media (min-width: 1150px) {
+	.note-ref-foot {
+		display: none;
+	}
+	#footnotes {
+		display: none;
+	}
+}

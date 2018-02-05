@@ -1,0 +1,5 @@
+<svg
+{%- capture path %}svg/{{ include.name }}.svg{% endcapture -%}
+{%- include load path=path -%}
+{%- assign contents = contents | split: '<svg' -%}
+{% if include.id %} id="{{ include.id }}"{% endif %}{% if include.class %} class="{{ include.class }}"{% endif %}{% if include.attributes %} {{ include.attributes }}{% endif %} {{ contents[1] | strip_newlines -}}

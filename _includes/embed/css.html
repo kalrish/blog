@@ -1,0 +1,3 @@
+<style>
+	{{- include.preamble | append: '@import "' | append: include.name | append: '";' | append: include.postamble | scssify -}}
+</style>

@@ -1,0 +1,5 @@
+<script>
+	{%- capture path %}js/{{ include.name }}.js{% endcapture -%}
+	{%- include load path=path -%}
+	{{- contents -}}
+</script>

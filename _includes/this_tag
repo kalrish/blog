@@ -1,0 +1,2 @@
+{%- assign this_tag_id = page.path | split: '/' | last | split: '.' | first -%}
+{%- assign this_tag = site.data.tags[this_tag_id] -%}

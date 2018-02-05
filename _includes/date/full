@@ -1,0 +1,8 @@
+{%- assign day = include.date | date: "%-d" -%}
+{%- assign month = include.date | date: "%m" | minus: 1 -%}
+{%- assign year = include.date | date: "%Y" -%}
+{%- case include.lang -%}
+	{%- when "es" %}{{ day }} de {{ site.data.i18n.month_names[month].es | downcase }} de {{ year }}
+	{%- when "en" %}{{ day }}{% include english-ordinal-suffix number=day %} of {{ site.data.i18n.month_names[month].en }} of {{ year }}
+	{%- when "de" %}{{ day }}. {{ site.data.i18n.month_names[month].de }} {{ year }}
+{%- endcase -%}

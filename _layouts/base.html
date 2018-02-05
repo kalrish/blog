@@ -1,0 +1,61 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/png" href="{{ "/assets/favicon.png" | relative_url }}">
+		<!--<link rel="alternate" type="application/rss+xml" title="RSS feed" href="{{ "/feed.xml" | relative_url }}" >-->
+		{% feed_meta %}
+		{% if layout.head -%}
+			{%- include head/{{ layout.head }}.html -%}
+		{%- endif -%}
+		{%- capture preamble -%}
+			$baseurl: "{{ site.baseurl }}";
+			$lang: "{{ page.lang }}";
+			@import "reset";
+			@import "base";
+		{%- endcapture -%}
+		{%- capture postamble -%}
+			@media screen {
+				@import "base/screen";
+				@import "{{ page.layout }}/screen";
+			}
+			@media print {
+				@import "base/print";
+				@import "{{ page.layout }}/print";
+			}
+		{%- endcapture -%}
+		{%- include embed/css.html name=page.layout preamble=preamble postamble=postamble -%}
+	</head>
+	<body>
+		<header id="site-header">
+			<h1 id="site-title"><a href="{{ "/" | append: page.lang | append: "/home" | relative_url }}">{{ site.title }}</a></h1>
+		</header>
+		<nav id="navibar" lang="{{ page.lang }}">
+			<nav id="left">
+				<a href="{{ "/" | append: page.lang | append: "/index" | relative_url }}">{{ site.data.i18n.archive[page.lang] }}</a>
+				{%- if layout.navibar -%}
+					{%- include navibar/{{ layout.navibar }}.html -%}
+				{%- endif -%}
+			</nav>
+			<a id="about" href="{{ "/" | append: page.lang | append: "/about" | relative_url }}">{{ site.data.i18n.about[page.lang] }}</a>
+		</nav>
+		<main>
+			{{ content }}
+		</main>
+		<footer id="site-footer">
+			{%- assign first_year = site.launchdate | date: '%Y' -%}
+			{%- assign last_year = site.time | date: '%Y' -%}
+			<small id="copyright-disclaimer">Copyright &copy; <a rel="author" href="/{{ page.lang }}/home">{{ site.author }}</a>{% comment %}, {% if first_year == last_year %}{{ first_year }}{% else %}{{ first_year }}&ndash;{{ last_year }}{% endif %}{% endcomment %}</small>
+			<nav id="site-footer-right">
+				<!--<a id="site-footer-link-email-site" href="mailto:{{ site.email.site }}">{{ site.email.site }}</a>-->
+				<a class="site-footer-icon-link" href="mailto:{{ site.email.site }}">{% include embed/svg.html name="mail" class="site-footer-icon" %}</a>
+				<a class="site-footer-icon-link" href="https://github.com/kalrish/blog">{% include embed/svg.html name="github" class="site-footer-icon" %}</a>
+				<a class="site-footer-icon-link" rel="alternate" type="application/atom+xml" href="{{ "/feed.xml" | absolute_url }}">{% include embed/svg.html name="feed" class="site-footer-icon" %}</a>
+			</nav>
+		</footer>
+	</body>
+</html>

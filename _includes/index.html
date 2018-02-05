@@ -1,0 +1,42 @@
+{%- assign posts_by_year = include.posts | group_by_exp: "post", "post.date | date: '%Y'" -%}
+<aside id="years">
+	<nav id="year-list">
+		{%- for year in posts_by_year -%}
+			<a class="year-link" href="#year:{{ year.name }}">{{ year.name }}</a>
+		{%- endfor %}
+	</nav>
+</aside>
+<div id="posts">
+	{%- for year in posts_by_year -%}
+		<h2 id="year:{{ year.name }}" class="year-entry"><span class="year-label">{{ year.name }}</span><a href="#top">{% include embed/svg.html name="arrow-top" class="goto-top-icon" %}</a></h2>
+		<ol class="post-list">
+			{%- for post in year.items -%}
+				<li class="post-entry {% if post.lang == page.lang %}samelang{% else %}difflang{% endif %}">
+					<time class="post-date" lang="{{ page.lang }}" datetime="{{ post.date | date_to_xmlschema }}">
+						{%- include date/index date=post.date lang=page.lang -%}
+					</time>
+					<h3 class="post-title" lang="{{ post.lang }}"><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+				</li>
+			{%- endfor -%}
+		</ol>
+	{%- endfor -%}
+</div>
+<aside id="catsandtags">
+	{% if include.category.subcategories -%}
+		<div id="cats" lang="{{ page.lang }}">
+			<h2>{{ include.category.subcategories_name[page.lang] }}</h2>
+			<nav id="cats-list">
+				{%- for category in include.category.subcategories -%}
+					<a href="{{ category.id }}/index">{{ category.name[page.lang] }}</a>
+				{%- endfor %}
+			</nav>
+		</div>
+	{%- endif %}
+	<div id="tags" lang="{{ page.lang }}">
+		<h2>{{ site.data.i18n.tags[page.lang] }}</h2>
+		<nav id="tags-list">
+			{%- include collect_tags posts=include.posts -%}
+			{%- include list_tags.html tags=tags -%}
+		</nav>
+	</div>
+</aside>

@@ -3,5 +3,15 @@
 		"es": "Categorías",
 		"en": "Categories",
 		"de": "Kategorien"
-	}
+	},
+	"subcategories": [
+		{
+			"id": "ideas",
+			"name": {
+				"es": "Ideas",
+				"en": "Ideas",
+				"de": "Ideen"
+			}
+		}
+	]
 }

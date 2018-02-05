@@ -14,6 +14,21 @@
 			}
 		},
 		{
+			"id": "interests",
+			"name": {
+				"es": "Intereses",
+				"en": "Interests",
+				"de": "Interessen"
+			},
+			"subcategories_name": {
+				"es": "Temas",
+				"en": "Topics",
+				"de": "Themata"
+			},
+			"subcategories": [
+			]
+		},
+		{
 			"id": "creations",
 			"name": {
 				"es": "Creaciones",

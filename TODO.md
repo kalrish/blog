@@ -53,5 +53,3 @@
     Right now, it looks different on different browsers. It's alright in Chrome but off in Firefox.
 
 - [x]  Link RSS feed
-
-- [ ]  

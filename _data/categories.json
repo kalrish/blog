@@ -12,6 +12,21 @@
 				"en": "Ideas",
 				"de": "Ideen"
 			}
+		},
+		{
+			"id": "creations",
+			"name": {
+				"es": "Creaciones",
+				"en": "Creations",
+				"de": "Schöpfungen"
+			},
+			"subcategories_name": {
+				"es": "Géneros",
+				"en": "Genres",
+				"de": "Gattungen"
+			},
+			"subcategories": [
+			]
 		}
 	]
 }

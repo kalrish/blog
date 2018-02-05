@@ -1,0 +1,8 @@
+@mixin language-highlight($difflang-color, $samelang-color: black) {
+	.difflang * {
+		color: $difflang-color;
+	}
+	.samelang * {
+		color: $samelang-color;
+	}
+}

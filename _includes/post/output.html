@@ -1,0 +1,15 @@
+{{- include.parts[0] -}}
+{%- assign rest = include.parts | shift -%}
+{%- unless rest.size == 0 -%}
+	{%- assign subparts = rest[0] | split: '</note>' -%}
+	{%- assign note_content = subparts[0] -%}
+	{%- assign side = note_content | slice: 0 -%}
+	{%- assign note_content = note_content | remove_first: side -%}
+	{%- assign notes = notes | push: note_content -%}
+	{%- capture arrow_icon_name %}arrow-{% case side %}{% when 'l' %}left{% when 'r' %}right{% endcase %}{% endcapture -%}
+	<span id="note-ref:{{ note_number }}" class="note-ref r"><sup><a class="note-ref-foot" href="#note:{{ note_number }}">{{ note_number }}</a></sup>{% include embed/svg.html name=arrow_icon_name class="note-ref-side" %}<small class="sidenote {{ side }}">{{ note_content }}</small></span>
+	{%- assign note_number = note_number | plus: 1 -%}
+	{%- assign next_first = subparts[1] -%}
+	{%- assign _parts = rest | shift | unshift: next_first -%}
+	{%- include post/output.html parts=_parts -%}
+{%- endunless -%}

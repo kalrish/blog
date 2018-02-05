@@ -1,0 +1,84 @@
+@mixin text {
+	text-align: justify;
+	hyphens: manual;
+	@supports (hyphens: auto) {
+		hyphens: auto;
+	}
+	
+	i {
+		font-style: italic;
+	}
+	
+	$quotes: (
+		es: "\0000AB" "\0000BB",
+		en: "\00201C" "\00201D" "\002018" "\002019",
+		de: "\00201E" "\00201C"
+	);
+	q {
+		@if map-has-key($quotes, $lang) {
+			quotes: map-get($quotes, $lang);
+			&::before {
+				content: open-quote;
+			}
+			&::after {
+				content: close-quote;
+			}
+		} @else {
+			quotes: none;
+		}
+	}
+	
+	cite {
+		font-style: italic;
+	}
+	
+	.sentsides > .sentside + .sentside::before {
+		/* Use em units to set the dash with margins proportional to the font size of the surrounding text */
+		margin-left: .4em;
+		margin-right: .4em;
+		/* We could also draw the dash ourselves so as to avoid differences between fonts */
+		content: "\002014";
+	}
+	
+	.ili {
+		&::before {
+			/* Drawing the bullet ourselves has some benefits:
+				-  we don't depend on the font having U+25CF
+			   but also some drawbacks:
+				-  the space around it is breakable
+				-  requires border-radius
+			content: "";
+			margin-left: .7em;
+			margin-right: .4em;
+			display: inline-block;
+			width: .35em;
+			height: .35em;
+			border-radius: 50%;
+			background-color: black;
+			position: relative;
+			bottom: .076em;
+			*/
+			content: "\0000A0\0000A0\0025CF\0000A0";
+			font-size: 0.8em;
+		}
+		
+		&:nth-last-child(n+3)::after {
+			@if ( $lang == 'de' ) {
+				content: ";";
+			} @else {
+				content: ",";
+			}
+		}
+		
+		&:nth-last-child(2)::after {
+			content: map-get(
+					(
+						es: ", y",
+						en: ", and",
+						de: "; und"
+					),
+					$lang
+				);
+		}
+	}
+}

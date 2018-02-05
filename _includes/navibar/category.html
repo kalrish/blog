@@ -1,0 +1,8 @@
+{%- include category_ids -%}
+{%- assign categories = '' | split: '' -%}
+{%- include categorize categories=site.data.categories ids=category_ids -%}
+{%- assign __url = '/' | append: page.lang -%}
+{%- for category in categories -%}
+	{%- assign __url = __url | append: '/' | append: category.id -%}
+	<a href="{{ __url | append: '/index' | relative_url }}">{{ category.name[page.lang] }}</a>
+{%- endfor -%}

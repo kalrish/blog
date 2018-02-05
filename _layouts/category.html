@@ -1,0 +1,16 @@
+---
+layout: base
+head: category
+navibar: category
+---
+{%- include category_ids -%}
+{%- include categorize categories=site.data.categories ids=category_ids -%}
+<div id="ret-arrow">
+	<a href="../index">{% include embed/svg.html name="arrow-left" id="ret-arrow-img" %}</a>
+</div>
+<header id="cat-intro" lang="{{ page.lang }}">
+	<h2 id="cat-title">{{ this_category.name[page.lang] }}</h2>
+	{{ content }}
+</header>
+{%- assign posts = site.categories[this_category_id] -%}
+{%- include index.html posts=posts category=this_category -%}

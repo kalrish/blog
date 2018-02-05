@@ -1,0 +1,45 @@
+@import "base/screen";
+@import "text";
+@import "fonts/et-book";
+
+main {
+	max-width: 525px;
+	@media (max-width: 600px) {
+		margin-top: 20px;
+	}
+	@media (min-width: 600px) {
+		margin-top: 55px;
+	}
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*
+article > h2 {
+	margin-top: 28px;
+	margin-bottom: 12px;
+	font-family: et-book;
+}
+*/
+
+article {
+	@include text;
+	font-family: et-book;
+	font-size: 20px;
+}
+
+article a {
+	color: #4155f4;
+	
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+article > p + p {
+	margin-top: 20px;
+}
+
+#site-footer {
+	margin-top: 50px;
+}

@@ -1,0 +1,70 @@
+@media (max-width: 1000px) {
+	main {
+		grid-template-columns: auto 15%;
+		grid-template-rows: max-content;
+		grid-template-areas:
+			"t t"
+			"l y"
+			"p p";
+		grid-column-gap: 60px;
+		grid-row-gap: 40px;
+	}
+}
+
+@media (min-width: 1000px) {
+	main {
+		grid-template-columns: 7% minmax(615px,75%) 15%;
+		grid-template-rows: max-content;
+		grid-column-gap: 60px;
+		grid-row-gap: 35px;
+	}
+}
+
+@import "index";
+@import "text";
+@import "fonts/cinzel";
+@import "fonts/et-book";
+
+@media (max-width: 1000px) {
+	#ret-arrow {
+		display: none;
+	}
+	
+	#cat-intro {
+		grid-area: t;
+	}
+	
+	#cat-intro > h2 {
+		font-family: Cinzel;
+		font-size: 25px;
+	}
+}
+
+@media (min-width: 1000px) {
+	#ret-arrow {
+		grid-column: 1;
+		align-self: center;
+		text-align: center;
+	}
+	
+	#ret-arrow-img {
+		height: 25px;
+	}
+	
+	#cat-intro {
+		//margin-bottom: 35px;
+		grid-column: 2;
+	}
+	
+	#cat-intro > h2 {
+		margin-bottom: 15px;
+		font-family: Cinzel;
+		font-size: 25px;
+	}
+}
+
+#cat-intro {
+	@include text;
+	font-family: et-book;
+	font-size: 18px;
+}

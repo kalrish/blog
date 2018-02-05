@@ -1,0 +1,259 @@
+@import "text";
+@import "taglink";
+@import "fonts/et-book";
+
+$max-post-width: 650px;
+$sidenotes-distance: 30px;
+$sidenotes-margin: 20px;
+
+main {
+	max-width: $max-post-width;
+	@media (max-width: 600px) {
+		margin-top: 20px;
+	}
+	@media (min-width: 600px) {
+		margin-top: 55px;
+	}
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#post-header {
+	margin-bottom: 27px;
+}
+
+#post-title {
+	font-family: Cinzel;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+#post-date {
+	font-family: Georgia;
+	font-size: 17px;
+	//font-style: italic;
+	display: block;
+}
+
+#post-content {
+	@include text;
+	font-family: et-book;
+	font-size: 20px;
+	line-height: 1.4;
+}
+
+@supports (initial-letter: 2) {
+	#post-content > p:first-child {
+		initial-letter: 2;
+	}
+	#post-content > p:first-child::first-letter {
+		margin-right: 5px;
+	}
+}
+
+@supports not (initial-letter: 2) {
+	#post-content > p:first-child::first-letter {
+		float: left;
+		margin-top: 18px;
+		margin-right: 6px;
+		margin-bottom: 14px;
+		font-size: 75px;
+		line-height: 45px;
+	}
+}
+
+#post-content p > .restcap {
+	font-variant: small-caps;
+	font-size: 24px;
+}
+
+#post-content p + p {
+	margin-top: 20px;
+}
+
+#post-content code {
+	font-family: monospace;
+	font-size: 17px;
+}
+
+/* Assumption: lists are surrounded by paragraphs */
+#post-content ul, #post-content ol {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+/* Assumption: quotations are surrounded by paragraphs */
+#post-content blockquote {
+	margin: 29px 19px 27px;
+}
+
+#post-content blockquote > footer {
+	margin-top: 10px;
+	text-align: right;
+}
+
+#post-content blockquote > footer > cite {
+	font-size: 19px;
+}
+
+#post-content a {
+	color: #4155f4;
+}
+
+#post-content p:last-child::after {
+	content: "";
+	display: inline-block;
+	margin-left: 7px;
+	width: 10px;
+	height: 10px;
+	background-color: black;
+}
+
+.note-ref {
+	font-size: smaller;
+	vertical-align: super;
+}
+
+.note-ref-side {
+	width: 7px;
+}
+
+.sidenote {
+	position: absolute;
+	width: calc(50vw - #{$max-post-width / 2 + $sidenotes-margin + $sidenotes-distance});
+	font-size: 18px;
+	font-style: italic;
+	line-height: 1.3;
+	//transform: translateY(-30%);
+}
+.sidenote.r {
+	right: $sidenotes-margin;
+}
+.sidenote.l {
+	left: $sidenotes-margin;
+}
+
+#footnotes {
+	margin-top: 30px;
+}
+
+#footnotes > h3 {
+	margin-bottom: 10px;
+	font-family: Georgia;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+#footnotes-list {
+	margin-left: 6px;
+	display: table;
+	counter-reset: item-number;
+}
+
+#footnotes-list > li {
+	counter-increment: item-number;
+	display: table-row;
+	font-family: et-book;
+	font-size: 18px;
+	line-height: 1.4;
+	text-align: justify;
+	hyphens: manual;
+	@supports (hyphens: auto) {
+		hyphens: auto;
+	}
+}
+
+#footnotes-list > li::before {
+	display: table-cell;
+	content: counter(item-number) ".";
+	padding-right: 10px;
+	text-align: right;
+}
+
+.footnote-goto-reference-link {
+	margin-left: 0.4em;
+	color: blue;
+}
+
+#tags {
+	margin-top: 38px;
+	margin-bottom: 54px;
+}
+
+#tags > h3 {
+	margin-bottom: 10px;
+	font-family: Georgia;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+#tags-list {
+	margin-left: 6px;
+	list-style-type: none;
+}
+
+#comments {
+	padding-top: 50px;
+	border-top: 1px inset lightgrey;
+}
+
+#comments > h3 {
+	margin-bottom: 34px;
+	font-family: Georgia;
+	font-weight: bold;
+	font-size: 21px;
+}
+
+#comments > ul {
+	margin-left: 14px;
+	list-style-type: none;
+}
+
+#comments > ul > li + li {
+	margin-top: 27px;
+}
+
+.comment-header {
+	margin-bottom: 13px;
+}
+
+.comment-header > address {
+	display: inline;
+}
+
+.comment-header > address > a[rel=author] {
+	font-family: Georgia;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.comment-header > time {
+	font-family: Georgia;
+	font-size: 15px;
+}
+
+#comments > ul > li > article > p {
+	font-family: et-book;
+	font-size: 18px;
+	line-height: 1.3;
+}
+
+#no-comments-sofar {
+	font-family: Georgia;
+	font-size: 16px;
+}
+
+#send-comment {
+	margin-top: 34px;
+}
+
+#send-comment-link {
+	color: blue;
+	font-family: et-book;
+	font-size: 18px;
+}
+
+#site-footer {
+	margin-top: 70px;
+}

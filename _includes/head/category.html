@@ -1,0 +1,8 @@
+{%- include category_ids -%}
+{%- assign categories = '' | split: '' -%}
+{%- include categorize categories=site.data.categories ids=category_ids -%}
+{%- assign title = '' | split: '' -%}
+{%- for category in categories -%}
+	{%- assign title = title | push: category.name[page.lang] -%}
+{%- endfor -%}
+<title lang="{{ page.lang }}">{{ site.title }} | {{ title | join: ' | ' }}</title>

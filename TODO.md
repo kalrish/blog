@@ -53,3 +53,7 @@
     Right now, it looks different on different browsers. It's alright in Chrome but off in Firefox.
 
 - [x]  Link RSS feed
+
+- [ ]  Offer fonts in WOFF2 as well
+
+    The format enables (at least theoretically) further compression than its predecessor and, in any case, than formats such as TrueType.

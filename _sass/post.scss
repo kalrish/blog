@@ -233,7 +233,7 @@ main {
 	font-size: 15px;
 }
 
-#comments > ul > li > article > p {
+.comment-content {
 	@include text;
 	font-family: et-book;
 	font-size: 18px;

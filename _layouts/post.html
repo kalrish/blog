@@ -45,7 +45,7 @@ head: post
 						<li>
 							<article class="comment">
 								<header class="comment-header">
-									<address><a rel="author">{{ comment.author }}</a></address>, {% comment %}{{ site.data.i18n.date_start[page.lang] }} {% endcomment %}<time class="comment-date" datetime="{{ comment.date | date_to_xmlschema }}">{%- include date/full date=comment.date lang=page.lang -%}</time>
+									<address><a rel="author" {% if comment.url %}href="{{ comment.url }}"{% endif %}>{{ comment.author }}</a></address>, {% comment %}{{ site.data.i18n.date_start[page.lang] }} {% endcomment %}<time class="comment-date" datetime="{{ comment.date | date_to_xmlschema }}">{%- include date/full date=comment.date lang=page.lang -%}</time>
 								</header>
 								{% include comments/{{ comment.id }}.html %}
 							</article>

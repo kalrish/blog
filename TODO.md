@@ -57,5 +57,7 @@
 - [ ]  Offer fonts in WOFF2 as well
 
     The format enables (at least theoretically) further compression than its predecessor and, in any case, than formats such as TrueType.
+    
+    - [x]  Cinzel
 
 - [ ]  Offer the favicon in proper formats

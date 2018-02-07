@@ -234,6 +234,7 @@ main {
 }
 
 #comments > ul > li > article > p {
+	@include text;
 	font-family: et-book;
 	font-size: 18px;
 	line-height: 1.3;

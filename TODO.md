@@ -63,3 +63,4 @@
 - [ ]  Offer the favicon in proper formats
 
     - [x]  PNG, 16x16
+    - [x]  PNG, 32x32

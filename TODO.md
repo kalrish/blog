@@ -61,3 +61,5 @@
     - [x]  Cinzel
 
 - [ ]  Offer the favicon in proper formats
+
+    - [x]  PNG, 16x16

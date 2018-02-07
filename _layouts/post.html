@@ -40,7 +40,7 @@ head: post
 		<section id="comments">
 			<h3>{{ site.data.i18n.comments[page.lang] }}</h3>
 			{% if site.data.comments[page.id] -%}
-				<ul>
+				<ul id="comment-list">
 					{%- for comment in site.data.comments[page.id] -%}
 						<li>
 							<article class="comment">

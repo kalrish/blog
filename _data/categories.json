@@ -41,6 +41,14 @@
 				"de": "Gattungen"
 			},
 			"subcategories": [
+				{
+					"id": "tales",
+					"name": {
+						"es": "Relatos",
+						"en": "Tales",
+						"de": "Erzählungen"
+					}
+				}
 			]
 		}
 	]

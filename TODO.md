@@ -54,11 +54,12 @@
 
 - [x]  Link RSS feed
 
-- [ ]  Offer fonts in WOFF2 as well
+- [x]  Offer fonts in WOFF2 as well
 
     The format enables (at least theoretically) further compression than its predecessor and, in any case, than formats such as TrueType.
     
     - [x]  Cinzel
+    - [x]  ET Book
 
 - [ ]  Offer the favicon in proper formats
 

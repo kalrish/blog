@@ -32,7 +32,7 @@
 
     In CSS, we probably have to use media queries to decide which one to use. However, whenever possible, we should leave the decision to the browser, which is able to take more data into account (factoring, for example, connection speed).
 
-- [ ]  Support comment author URLs, whereby commenters may specify a site linked to their person (e.g. their personal website or a profile page)
+- [x]  Support comment author URLs, whereby commenters may specify a site linked to their person (e.g. their personal website or a profile page)
 
 - [x]  Let browsers hyphenate paragraphs if they can
 

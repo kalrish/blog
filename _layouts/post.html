@@ -40,7 +40,7 @@ head: post
 		<section id="comments">
 			<h3>{{ site.data.i18n.comments[page.lang] }}</h3>
 			{% if site.data.comments[page.id] -%}
-				<ul id="comment-list">
+				<ol id="comment-list">
 					{%- for comment in site.data.comments[page.id] -%}
 						<li>
 							<article class="comment">
@@ -53,7 +53,7 @@ head: post
 							</article>
 						</li>
 					{%- endfor -%}
-				</ul>
+				</ol>
 			{%- else -%}
 				<p id="no-comments-sofar">{{ site.data.i18n.no_comments[page.lang] }}.</p>
 			{%- endif %}

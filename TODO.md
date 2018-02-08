@@ -65,3 +65,7 @@
 
     - [x]  PNG, 16x16
     - [x]  PNG, 32x32
+
+- [ ]  Enable ligatures in text fonts
+
+    The lack of ligatures is evident (and annoying) in post text, which uses the ET Book font.

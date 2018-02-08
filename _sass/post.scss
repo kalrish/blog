@@ -100,7 +100,7 @@ main {
 	color: #4155f4;
 }
 
-#post-content p:last-child::after {
+#post-content > p:last-child::after {
 	content: "";
 	display: inline-block;
 	margin-left: 7px;

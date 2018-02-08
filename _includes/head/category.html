@@ -5,4 +5,4 @@
 {%- for category in categories -%}
 	{%- assign title = title | push: category.name[page.lang] -%}
 {%- endfor -%}
-<title lang="{{ page.lang }}">{{ site.title }} | {{ title | join: ' | ' }}</title>
+<title lang="{{ page.lang }}">{{ site.title }} | {{ title | join: ' / ' }}</title>

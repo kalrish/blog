@@ -48,9 +48,7 @@ layout: compress
 			{{ content }}
 		</main>
 		<footer id="site-footer">
-			{%- assign first_year = site.launchdate | date: '%Y' -%}
-			{%- assign last_year = site.time | date: '%Y' -%}
-			<small id="copyright-disclaimer">Copyright &copy; <a rel="author" href="/{{ page.lang }}/home">{{ site.author }}</a>{% comment %}, {% if first_year == last_year %}{{ first_year }}{% else %}{{ first_year }}&ndash;{{ last_year }}{% endif %}{% endcomment %}</small>
+			<small id="copyright-disclaimer">Copyright &copy; <a rel="author" href="/{{ page.lang }}/home">{{ site.author }}</a></small>
 			<nav id="site-footer-right">
 				<!--<a id="site-footer-link-email-site" href="mailto:{{ site.email.site }}">{{ site.email.site }}</a>-->
 				<a class="site-footer-icon-link" href="mailto:{{ site.email.site }}">{% include embed/svg.html name="mail" class="site-footer-icon" %}</a>

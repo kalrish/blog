@@ -70,7 +70,7 @@
 
     The lack of ligatures is evident (and annoying) in post text, which uses the ET Book font.
 
-- [ ]  Mark external links with `rel=external`
+- [x]  Mark external links with `rel=external`
 
 - [ ]  Internationalize 404 page
 

@@ -26,6 +26,14 @@
 				"de": "Themata"
 			},
 			"subcategories": [
+				{
+					"id": "programming",
+					"name": {
+						"es": "Programación",
+						"en": "Programming",
+						"de": "Programmierung"
+					}
+				}
 			]
 		},
 		{

@@ -122,11 +122,16 @@ main {
 
 .note-ref {
 	font-size: smaller;
+}
+
+.note-ref-foot {
 	vertical-align: super;
 }
 
 .note-ref-side {
 	width: 7px;
+	position: relative;
+	bottom: .55em;
 }
 
 .sidenote {

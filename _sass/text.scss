@@ -42,22 +42,6 @@
 	
 	.ili {
 		&::before {
-			/* Drawing the bullet ourselves has some benefits:
-				-  we don't depend on the font having U+25CF
-			   but also some drawbacks:
-				-  the space around it is breakable
-				-  requires border-radius
-			content: "";
-			margin-left: .7em;
-			margin-right: .4em;
-			display: inline-block;
-			width: .35em;
-			height: .35em;
-			border-radius: 50%;
-			background-color: black;
-			position: relative;
-			bottom: .076em;
-			*/
 			content: "\0000A0\0000A0\0025CF\0000A0";
 			font-size: 0.8em;
 		}

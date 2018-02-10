@@ -75,3 +75,5 @@
 - [ ]  Internationalize 404 page
 
     As it is now, it is unconditionally displayed in English, which is annoying when browsing the site in another language, for all the links offered point to the English pages. It would be best if the previous language were respected, but that's probably impossible to achieve without having access to the server. Thus, our best bet is some JavaScript magic.
+
+- [ ]  Mark links to the about page with `rel=help`

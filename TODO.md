@@ -69,3 +69,5 @@
 - [ ]  Enable ligatures in text fonts
 
     The lack of ligatures is evident (and annoying) in post text, which uses the ET Book font.
+
+- [ ]  Mark external links with `rel=external`

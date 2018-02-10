@@ -17,5 +17,15 @@
 				"es": "Kalrish es un personaje recurrente en muchos de mis relatos."
 			}
 		}
+	},
+	"abi": {
+		"name": {
+			"list": {
+				"en": "ABI"
+			},
+			"full": {
+				"en": "ABI"
+			}
+		}
 	}
 }

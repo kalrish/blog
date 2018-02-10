@@ -77,3 +77,7 @@
     As it is now, it is unconditionally displayed in English, which is annoying when browsing the site in another language, for all the links offered point to the English pages. It would be best if the previous language were respected, but that's probably impossible to achieve without having access to the server. Thus, our best bet is some JavaScript magic.
 
 - [ ]  Mark links to the about page with `rel=help`
+
+- [ ]  Remove all instances of `<meta charset="utf-8">`
+
+    GitHub's servers expect documents to be encoded in UTF-8 and already specify UTF-8 in HTTP headers, so this is redundant and unnecessary.

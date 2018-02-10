@@ -65,4 +65,9 @@
 				);
 		}
 	}
+	
+	p.continuation::before {
+		content: "\0000BB";
+		margin-right: .5em;
+	}
 }

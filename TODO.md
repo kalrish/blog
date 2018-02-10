@@ -48,7 +48,7 @@
 
 - [x]  Style &lt;cite&gt; properly in posts
 
-- [ ]  Improve the drop caps implementation
+- [x]  Improve the drop caps implementation
 
     Right now, it looks different on different browsers. It's alright in Chrome but off in Firefox.
 

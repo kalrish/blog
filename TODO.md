@@ -82,6 +82,6 @@
 
     GitHub's servers expect documents to be encoded in UTF-8 and already specify UTF-8 in HTTP headers, so this is redundant and unnecessary.
 
-- [ ]  Link the language-relevant page in `<link rel=author>`
+- [x]  Link the language-relevant page in `<link rel=author>`
 
     Using the Liquid variable `page.lang`, we can link directly to the language-relevant page and thus avoid a redirection.

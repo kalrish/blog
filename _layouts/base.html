@@ -4,6 +4,7 @@ layout: compress
 <!DOCTYPE html>
 <html>
 	<head>
+		<title {% if page.lang %}lang="{{ page.lang }}"{% endif %}>{%- include title/{{ layout.title }}.html -%}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="author" href="/{{ page.lang }}/home">
 		{%- include head/favicon.html -%}

@@ -1,6 +1,6 @@
 <ol id="post-list">
 	{%- for post in site.posts limit:6 -%}
-		<li class="{% if post.lang == page.lang %}samelang{% else %}difflang{% endif %}" lang="{{ post.lang }}">
+		<li {% if page.lang %}class="{% if post.lang == page.lang %}samelang{% else %}difflang{% endif %}"{% endif %} lang="{{ post.lang }}">
 			<h2 class="post-title"><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
 			<time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
 				{%- include date/full date=post.date lang=post.lang -%}

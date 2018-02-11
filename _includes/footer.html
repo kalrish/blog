@@ -1,0 +1,9 @@
+<footer id="site-footer">
+	<small id="copyright-disclaimer">Copyright &copy; <a rel="author" href="/{{ page.lang }}/home">{{ site.author }}</a></small>
+	<nav id="site-footer-right">
+		<!--<a id="site-footer-link-email-site" href="mailto:{{ site.email.site }}">{{ site.email.site }}</a>-->
+		<a class="site-footer-icon-link" href="mailto:{{ site.email.site }}">{% include embed/svg.html name="mail" class="site-footer-icon" %}</a>
+		<a class="site-footer-icon-link" rel="external" href="https://github.com/kalrish/blog">{% include embed/svg.html name="github" class="site-footer-icon" %}</a>
+		<a class="site-footer-icon-link" rel="alternate" type="application/atom+xml" href="{{ "/feed.xml" | absolute_url }}">{% include embed/svg.html name="feed" class="site-footer-icon" %}</a>
+	</nav>
+</footer>

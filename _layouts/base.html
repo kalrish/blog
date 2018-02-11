@@ -6,7 +6,7 @@ layout: compress
 	<head>
 		<title {% if page.lang %}lang="{{ page.lang }}"{% endif %}>{%- include title/{{ layout.title }}.html -%}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="author" href="/{{ page.lang }}/home">
+		<link rel="author" href="/{% if page.lang %}{{ page.lang }}/home{% endif %}">
 		<link rel="icon" type="image/svg+xml" href="{{ "/assets/favicon/favicon.svg" | relative_url }}">
 		<link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon/favicon-16x16.png" | relative_url }}">
 		<link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon/favicon-32x32.png" | relative_url }}">
@@ -53,7 +53,7 @@ layout: compress
 			{{ content }}
 		</main>
 		<footer id="site-footer">
-			<small id="copyright-disclaimer">Copyright &copy; <a rel="author" href="/{{ page.lang }}/home">{{ site.author }}</a></small>
+			<small id="copyright-disclaimer">Copyright &copy; <a rel="author" href="/{% if page.lang %}{{ page.lang }}/home{% endif %}">{{ site.author }}</a></small>
 			<nav id="site-footer-right">
 				<!--<a id="site-footer-link-email-site" href="mailto:{{ site.email.site }}">{{ site.email.site }}</a>-->
 				<a class="site-footer-icon-link" href="mailto:{{ site.email.site }}">{% include embed/svg.html name="mail" class="site-footer-icon" %}</a>

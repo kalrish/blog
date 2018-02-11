@@ -1,0 +1,82 @@
+@import "language-highlight";
+@import "text";
+@import "fonts/cinzel";
+@import "fonts/et-book";
+
+#site-header {
+	background-image: url($baseurl + "/assets/img/ooth.jpeg");
+	background-repeat: no-repeat;
+	background-position: 0% 39%;
+	background-size: 100%;
+}
+@media (max-height: 500px) {
+	#site-header {
+		padding-top: 15px;
+		padding-bottom: 5px;
+		padding-right: 13px;
+	}
+}
+@media (min-height: 500px) {
+	#site-header {
+		padding-top: 85px;
+		padding-bottom: 75px;
+		padding-right: 13px;
+	}
+}
+
+main {
+	margin: 23px 10px 10px;
+}
+
+#post-list {
+	column-width: 400px;
+	//column-fill: balance;
+	column-gap: 37px;
+	@include language-highlight(#525252);
+}
+
+#post-list > li {
+	max-width: 525px;
+}
+@supports (break-inside: avoid) {
+	#post-list > li {
+		break-inside: avoid;
+	}
+}
+@supports not (break-inside: avoid) {
+	#post-list > li {
+		overflow: hidden;
+	}
+}
+
+#post-list > li + li {
+	margin-top: 30px;
+}
+
+.post-title {
+	margin-bottom: 6px;
+}
+
+.post-link {
+	font-family: Cinzel;
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.post-date {
+	font-family: Georgia;
+	font-style: italic;
+	font-size: 17px;
+}
+
+.post-excerpt {
+	@include text;
+	margin-top: 11px;
+	font-family: et-book;
+	font-size: 19px;
+	line-height: 1.3;
+}
+
+#site-footer {
+	margin-top: 40px;
+}

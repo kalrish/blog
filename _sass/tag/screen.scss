@@ -1,0 +1,64 @@
+@media (max-width: 1000px) {
+	main {
+		grid-template-columns: auto 15%;
+		grid-template-areas:
+			"t t"
+			"l y"
+			"p p";
+		grid-column-gap: 60px;
+		grid-row-gap: 40px;
+	}
+}
+
+@media (min-width: 1000px) {
+	main {
+		grid-template-columns: 7% minmax(615px,75%) 15%;
+		grid-column-gap: 60px;
+	}
+}
+
+@import "index";
+@import "fonts/cinzel";
+@import "fonts/et-book";
+
+@media (max-width: 1000px) {
+	#tag-intro {
+		grid-area: t;
+		display: grid;
+		grid-template-columns: 25% auto;
+	}
+	
+	#tag-title {
+		font-family: Cinzel;
+		font-size: 25px;
+		grid-column: 1;
+	}
+	
+	#tag-intro > p {
+		font-family: et-book;
+		font-size: 18px;
+		grid-column: 2;
+	}
+	
+	div#years {
+		grid-area: l;
+	}
+}
+
+@media (min-width: 1000px) {
+	#tag-intro {
+		margin-bottom: 35px;
+		grid-column: 2;
+	}
+	
+	#tag-title {
+		margin-bottom: 15px;
+		font-family: Cinzel;
+		font-size: 25px;
+	}
+	
+	#tag-intro > p {
+		font-family: et-book;
+		font-size: 18px;
+	}
+}

@@ -78,7 +78,7 @@
 
 - [ ]  Mark links to the about page with `rel=help`
 
-- [ ]  Remove all instances of `<meta charset="utf-8">`
+- [x]  Remove all instances of `<meta charset="utf-8">`
 
     GitHub's servers expect documents to be encoded in UTF-8 and already specify UTF-8 in HTTP headers, so this is redundant and unnecessary.
 

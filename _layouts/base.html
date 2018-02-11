@@ -31,7 +31,7 @@ layout: compress
 	</head>
 	<body>
 		<header id="site-header">
-			<h1 id="site-title"><a href="{{ "/" | append: page.lang | append: "/home" | relative_url }}">{{ site.title }}</a></h1>
+			{%- include header/link.html -%}
 		</header>
 		<nav id="navibar" lang="{{ page.lang }}">
 			<nav id="left">

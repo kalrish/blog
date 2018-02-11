@@ -8,7 +8,6 @@ layout: compress
 		<link rel="author" href="/{{ page.lang }}/home">
 		{%- include head/favicon.html -%}
 		{% feed_meta %}
-		{%- include head/{{ layout.head }}.html -%}
 		{%- capture preamble -%}
 			$baseurl: "{{ site.baseurl }}";
 			$lang: "{{ page.lang }}";
@@ -28,6 +27,7 @@ layout: compress
 			}
 		{%- endcapture -%}
 		{%- include embed/css.html name=page.layout preamble=preamble postamble=postamble -%}
+		{%- include head/{{ layout.head }}.html -%}
 	</head>
 	<body>
 		<header id="site-header">

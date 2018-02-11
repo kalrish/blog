@@ -23,16 +23,6 @@ main {
 	display: flex;
 }
 
-#navibar > #left {
-	flex: 1 1 auto;
-	overflow-x: auto;
-	white-space: nowrap;
-}
-
-#navibar > #about {
-	flex: 0 0 auto;
-}
-
 #navibar a {
 	padding: 12.5px 16px;
 	color: lightblue;

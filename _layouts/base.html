@@ -7,7 +7,9 @@ layout: compress
 		<title {% if page.lang %}lang="{{ page.lang }}"{% endif %}>{%- include title/{{ layout.title }}.html -%}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="author" href="/{{ page.lang }}/home">
-		{%- include head/favicon.html -%}
+		<link rel="icon" type="image/svg+xml" href="{{ "/assets/favicon/favicon.svg" | relative_url }}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon/favicon-16x16.png" | relative_url }}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon/favicon-32x32.png" | relative_url }}">
 		{% feed_meta %}
 		{%- capture preamble -%}
 			$baseurl: "{{ site.baseurl }}";

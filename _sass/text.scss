@@ -9,22 +9,36 @@
 		font-style: italic;
 	}
 	
-	$quotes: (
+	$lang-quotes: (
 		es: "\0000AB" "\0000BB",
 		en: "\00201C" "\00201D" "\002018" "\002019",
 		de: "\00201E" "\00201C"
 	);
-	q {
-		@if map-has-key($quotes, $lang) {
-			quotes: map-get($quotes, $lang);
-			&::before {
-				content: open-quote;
+	@if variable-exists(lang) {
+		q {
+			@if map-has-key($lang-quotes, $lang) {
+				quotes: map-get($lang-quotes, $lang);
+				&::before {
+					content: open-quote;
+				}
+				&::after {
+					content: close-quote;
+				}
+			} @else {
+				quotes: none;
 			}
-			&::after {
-				content: close-quote;
+		}
+	} @else {
+		@each $lang, $quotes in $lang-quotes {
+			*:lang(#{$lang}) > q {
+				quotes: map-get($lang-quotes, $lang);
+				&::before {
+					content: open-quote;
+				}
+				&::after {
+					content: close-quote;
+				}
 			}
-		} @else {
-			quotes: none;
 		}
 	}
 	
@@ -46,23 +60,42 @@
 			font-size: 0.8em;
 		}
 		
-		&:nth-last-child(n+3)::after {
-			@if ( $lang == 'de' ) {
-				content: ";";
-			} @else {
+		@if variable-exists(lang) {
+			&:nth-last-child(n+3)::after {
+				@if ( $lang == 'de' ) {
+					content: ";";
+				} @else {
+					content: ",";
+				}
+			}
+			
+			&:nth-last-child(2)::after {
+				content: map-get(
+						(
+							es: ", y",
+							en: ", and",
+							de: "; und"
+						),
+						$lang
+					);
+			}
+		} @else {
+			&:nth-last-child(n+3)::after {
 				content: ",";
 			}
-		}
-		
-		&:nth-last-child(2)::after {
-			content: map-get(
-					(
-						es: ", y",
-						en: ", and",
-						de: "; und"
-					),
-					$lang
-				);
+			&:lang(de):nth-last-child(n+3)::after {
+				content: ";";
+			}
+			
+			&:lang(es):nth-last-child(2)::after {
+				content: ", y";
+			}
+			&:lang(en):nth-last-child(2)::after {
+				content: ", and";
+			}
+			&:lang(de):nth-last-child(2)::after {
+				content: "; und";
+			}
 		}
 	}
 	

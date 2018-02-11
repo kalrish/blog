@@ -23,10 +23,16 @@ layout: compress
 				@import "header/{{ layout.header }}";
 				@import "navibar/{{ layout.navibar }}";
 				@import "{{ page.layout }}/screen";
+				{% if page.css.screen %}
+					@import "{{ page.css.screen }}";
+				{% endif %}
 			}
 			@media print {
 				@import "base/print";
 				@import "{{ page.layout }}/print";
+				{% if page.css.print %}
+					@import "{{ page.css.print }}";
+				{% endif %}
 			}
 		{%- endcapture -%}
 		{%- include embed/css.html name=page.layout preamble=preamble postamble=postamble -%}

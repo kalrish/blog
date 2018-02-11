@@ -8,4 +8,5 @@ else if ( language.indexOf('de') > -1 )
 else
 	langcode = 'en';
 
-document.location.replace('{{ site.baseurl }}/' + langcode + '/home')
+document.getElementById("navibar").setAttribute("lang", langcode);
+document.getElementById("post-list").setAttribute("lang", langcode);

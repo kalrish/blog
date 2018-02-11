@@ -1,0 +1,15 @@
+#navibar {
+	min-height: 40px;
+	justify-content: space-between;
+}
+
+#navibar[lang=''] > * {
+	display: none !important;
+}
+
+$language-list: es, en, de;
+@each $language in $language-list {
+	#navibar:lang(#{$language}) > :not(:lang(#{$language})) {
+		display: none;
+	}
+}

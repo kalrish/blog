@@ -4,16 +4,4 @@ head: home
 header: asis
 navibar: standard
 ---
-<ol id="post-list">
-	{%- for post in site.posts limit:6 -%}
-		<li class="{% if post.lang == page.lang %}samelang{% else %}difflang{% endif %}">
-			<h2 class="post-title"><a class="post-link" lang="{{ post.lang }}" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
-			<time class="post-date" lang="{{ post.lang }}" datetime="{{ post.date | date_to_xmlschema }}">
-				{%- include date/full date=post.date lang=post.lang -%}
-			</time>
-			<blockquote class="post-excerpt" lang="{{ post.lang }}" cite="{{ post.url | relative_url }}">
-				<p>{{ post.excerpt | replace: "<p>", "" | replace: "</p>", "" | replace: "<note>", "<!--" | replace: "</note>", "-->" }}</p>
-			</blockquote>
-		</li>
-	{%- endfor -%}
-</ol>
+{%- include homelist.html -%}

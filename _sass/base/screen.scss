@@ -37,6 +37,34 @@ main {
 
 #site-footer {
 	flex: 0 0 auto;
+	border-top: 1px solid grey;
+	padding: 16px 30px 17px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #ECECEC;
 }
 
-@import "footer";
+#copyright-disclaimer {
+	flex: 0 1 auto;
+	font-size: medium;
+}
+
+#site-footer-right {
+	flex: 0 0 auto;
+}
+
+.site-footer-icon-link {
+	vertical-align: middle;
+}
+
+.site-footer-icon-link + .site-footer-icon-link {
+	margin-left: 8px;
+}
+
+.site-footer-icon {
+	display: inline-block;
+	height: 22px;
+	width: auto;
+	vertical-align: middle;
+}

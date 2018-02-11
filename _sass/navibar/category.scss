@@ -1,0 +1,9 @@
+#navibar > #left {
+	flex: 1 1 auto;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
+#navibar > #about {
+	flex: 0 0 auto;
+}

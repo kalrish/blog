@@ -21,6 +21,7 @@ layout: compress
 			@media screen {
 				@import "base/screen";
 				@import "header/{{ layout.header }}";
+				@import "navibar/{{ layout.navibar }}";
 				@import "{{ page.layout }}/screen";
 			}
 			@media print {
@@ -35,13 +36,7 @@ layout: compress
 			{%- include header/{{ layout.header }}.html -%}
 		</header>
 		<nav id="navibar" lang="{{ page.lang }}">
-			<nav id="left">
-				<a href="{{ "/" | append: page.lang | append: "/index" | relative_url }}">{{ site.data.i18n.archive[page.lang] }}</a>
-				{%- if layout.navibar -%}
-					{%- include navibar/{{ layout.navibar }}.html -%}
-				{%- endif -%}
-			</nav>
-			<a id="about" href="{{ "/" | append: page.lang | append: "/about" | relative_url }}">{{ site.data.i18n.about[page.lang] }}</a>
+			{%- include navibar/{{ layout.navibar }}.html -%}
 		</nav>
 		<main>
 			{{ content }}

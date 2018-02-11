@@ -1,8 +1,12 @@
-{%- include category_ids -%}
-{%- assign categories = '' | split: '' -%}
-{%- include categorize categories=site.data.categories ids=category_ids -%}
-{%- assign __url = '/' | append: page.lang -%}
-{%- for category in categories -%}
-	{%- assign __url = __url | append: '/' | append: category.id -%}
-	<a href="{{ __url | append: '/index' | relative_url }}">{{ category.name[page.lang] }}</a>
-{%- endfor -%}
+<nav id="left">
+	<a href="{{ "/" | append: page.lang | append: "/index" | relative_url }}">{{ site.data.i18n.archive[page.lang] }}</a>
+	{%- include category_ids -%}
+	{%- assign categories = '' | split: '' -%}
+	{%- include categorize categories=site.data.categories ids=category_ids -%}
+	{%- assign __url = '/' | append: page.lang -%}
+	{%- for category in categories -%}
+		{%- assign __url = __url | append: '/' | append: category.id -%}
+		<a href="{{ __url | append: '/index' | relative_url }}">{{ category.name[page.lang] }}</a>
+	{%- endfor -%}
+</nav>
+<a id="about" href="{{ "/" | append: page.lang | append: "/about" | relative_url }}">{{ site.data.i18n.about[page.lang] }}</a>

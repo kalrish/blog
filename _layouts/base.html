@@ -20,6 +20,7 @@ layout: compress
 		{%- capture postamble -%}
 			@media screen {
 				@import "base/screen";
+				@import "header/{{ layout.header }}";
 				@import "{{ page.layout }}/screen";
 			}
 			@media print {

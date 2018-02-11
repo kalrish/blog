@@ -28,7 +28,9 @@ layout: compress
 			}
 		{%- endcapture -%}
 		{%- include embed/css.html name=page.layout preamble=preamble postamble=postamble -%}
-		{%- include head/{{ layout.head }}.html -%}
+		{%- if layout.head -%}
+			{%- include head/{{ layout.head }}.html -%}
+		{%- endif -%}
 	</head>
 	<body>
 		<header id="site-header">

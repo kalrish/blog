@@ -26,10 +26,6 @@
 @import "fonts/et-book";
 
 @media (max-width: 1000px) {
-	#ret-arrow {
-		display: none;
-	}
-	
 	#cat-intro {
 		grid-area: t;
 	}
@@ -41,16 +37,6 @@
 }
 
 @media (min-width: 1000px) {
-	#ret-arrow {
-		grid-column: 1;
-		align-self: center;
-		text-align: center;
-	}
-	
-	#ret-arrow-img {
-		height: 25px;
-	}
-	
 	#cat-intro {
 		//margin-bottom: 35px;
 		grid-column: 2;

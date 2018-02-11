@@ -13,7 +13,9 @@ layout: compress
 		{% feed_meta %}
 		{%- capture preamble -%}
 			$baseurl: "{{ site.baseurl }}";
-			$lang: "{{ page.lang }}";
+			{% if page.lang %}
+				$lang: "{{ page.lang }}";
+			{% endif %}
 			@import "reset";
 			@import "base";
 		{%- endcapture -%}

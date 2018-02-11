@@ -8,9 +8,7 @@ layout: compress
 		<link rel="author" href="/{{ page.lang }}/home">
 		{%- include head/favicon.html -%}
 		{% feed_meta %}
-		{% if layout.head -%}
-			{%- include head/{{ layout.head }}.html -%}
-		{%- endif -%}
+		{%- include head/{{ layout.head }}.html -%}
 		{%- capture preamble -%}
 			$baseurl: "{{ site.baseurl }}";
 			$lang: "{{ page.lang }}";

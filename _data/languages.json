@@ -1,0 +1,19 @@
+{
+	"by": {
+		"chronological": [
+			"es",
+			"en",
+			"de"
+		],
+		"sides": [
+			"en",
+			"es",
+			"de"
+		]
+	},
+	"names": {
+		"en": "English",
+		"es": "Español",
+		"de": "Deutsch"
+	}
+}

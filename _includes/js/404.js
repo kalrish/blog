@@ -10,6 +10,7 @@ else
 	langcode = 'en';
 
 document.getElementById("navibar").lang = langcode;
+document.getElementById("site-title").href = baseurl + "/" + langcode + "/home";
 
 if ( (stored_lang && stored_lang != language) || !stored_lang )
 	localStorage.setItem("lang", language);

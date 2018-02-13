@@ -1,1 +1,2 @@
-<a id="site-title" href="{{ "/" | append: page.lang | append: "/home" | relative_url }}">{{ site.title }}</a>
+{%- assign lang = page.lang | default: "en" -%}
+<a id="site-title" href="{{ "/" | append: lang | append: "/home" | relative_url }}">{{ site.title }}</a>

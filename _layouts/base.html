@@ -38,6 +38,12 @@ layout: compress
 			}
 		{%- endcapture -%}
 		{%- include embed/css.html name=page.layout preamble=preamble postamble=postamble -%}
+		{%- if page.lang -%}
+			{%- capture preamble -%}
+				var page_lang = "{{ page.lang }}";
+			{%- endcapture -%}
+			{%- include embed/js.html name="storelang" preamble=preamble -%}
+		{%- endif -%}
 		{%- if layout.head -%}
 			{%- include head/{{ layout.head }}.html -%}
 		{%- endif -%}

@@ -1,4 +1,5 @@
-var language = navigator.language;
+var stored_lang = localStorage.getItem("lang");
+var language = stored_lang || navigator.language;
 
 var langcode;
 if ( language.indexOf('es') > -1 )
@@ -9,3 +10,6 @@ else
 	langcode = 'en';
 
 document.getElementById("navibar").lang = langcode;
+
+if ( (stored_lang && stored_lang != language) || !stored_lang )
+	localStorage.setItem("lang", language);

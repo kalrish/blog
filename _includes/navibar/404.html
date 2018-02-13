@@ -1,0 +1,4 @@
+{%- for language in site.data.languages.by.sides -%}
+	<a lang="{{ language }}" href="{{ "/" | append: language | append: "/index" | relative_url }}">{{ site.data.i18n.archive[language] }}</a>
+	<a lang="{{ language }}" href="{{ "/" | append: language | append: "/about" | relative_url }}">{{ site.data.i18n.about[language] }}</a>
+{%- endfor -%}

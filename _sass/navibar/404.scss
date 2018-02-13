@@ -1,0 +1,16 @@
+#navibar {
+	justify-content: space-between;
+}
+
+/* The navigation bar's language will not be set if JavaScript is disabled. In that case, the English elements shall be displayed as a default. */
+#navibar[lang=''] > *:not(:lang(en)) {
+	display: none !important;
+}
+
+/* If the navigation bar's language is set, hide all elements whose language doesn't match. */
+$language-list: es, en, de;
+@each $language in $language-list {
+	#navibar:lang(#{$language}) > :not(:lang(#{$language})) {
+		display: none;
+	}
+}

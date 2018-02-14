@@ -27,6 +27,14 @@
 			},
 			"subcategories": [
 				{
+					"id": "history",
+					"name": {
+						"es": "Historia",
+						"en": "History",
+						"de": "Geschichte"
+					}
+				},
+				{
 					"id": "programming",
 					"name": {
 						"es": "Programación",

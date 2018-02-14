@@ -1,12 +1,10 @@
 a.tag-link {
 	color: black;
-}
-
-a.tag-link:hover {
-	text-decoration: none;
-}
-
-a.tag-link[title] {
-	border-bottom: 1px dotted #000;
-	cursor: help;
+	&:hover {
+		text-decoration: none;
+	}
+	&[title] {
+		border-bottom: 1px dotted #000;
+		cursor: help;
+	}
 }

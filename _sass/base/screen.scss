@@ -37,7 +37,11 @@ main {
 #site-footer {
 	flex: 0 0 auto;
 	border-top: 1px solid grey;
-	padding: 16px 30px 17px;
+	padding: 16px 5px 17px;
+	@media (min-width: 650px) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
 	display: flex;
 	justify-content: space-between;
 	align-items: center;

@@ -96,6 +96,20 @@ main {
 	font-size: 19px;
 }
 
+#post-content figure {
+	padding: 30px 30px;
+}
+
+#post-content figure > img {
+	width: 100%;
+	height: auto;
+}
+
+#post-content figure > figcaption {
+	margin: 7px 10px 0;
+	font-size: 18px;
+}
+
 #post-content a {
 	color: #4155f4;
 }

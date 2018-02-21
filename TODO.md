@@ -85,3 +85,5 @@
 - [x]  Link the language-relevant page in `<link rel=author>`
 
     Using the Liquid variable `page.lang`, we can link directly to the language-relevant page and thus avoid a redirection.
+
+- [ ]  Implement post requirements

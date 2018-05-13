@@ -77,6 +77,4 @@ defaults:
             lang: "de"
 
 exclude:
-    - Gemfile
-    - Gemfile.lock
     - TODO.md

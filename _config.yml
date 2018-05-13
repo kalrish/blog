@@ -80,4 +80,3 @@ exclude:
     - Gemfile
     - Gemfile.lock
     - TODO.md
-    - .sass-cache

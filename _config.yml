@@ -16,6 +16,8 @@ compress_html:
     clippings: all
     comments: all
 markdown: kramdown
+kramdown:
+    input: Markdown
 sass:
     style: compressed
 plugins:

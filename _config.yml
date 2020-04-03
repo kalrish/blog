@@ -4,9 +4,9 @@ author: David Joaquín Shourabi Porcel
 baseurl: ''
 url: https://blog.www.djsp.eu/
 email:
-    author: david@davidjsp.eu
-    comments: david@davidjsp.eu
-    site: david@davidjsp.eu
+    author: david@djsp.eu
+    comments: david@djsp.eu
+    site: david@djsp.eu
 launchdate: 2018-02-05
 
 # Build settings

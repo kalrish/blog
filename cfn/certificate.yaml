@@ -1,0 +1,26 @@
+---
+
+
+AWSTemplateFormatVersion: 2010-09-09
+
+
+Description: 'Blog: SSL certificate.'
+
+
+Resources:
+
+   Certificate:
+      Type: AWS::CertificateManager::Certificate
+      Properties:
+         DomainName: blog.www.djsp.eu
+         SubjectAlternativeNames:
+            - '*.blog.www.djsp.eu'
+         ValidationMethod: DNS
+
+
+Outputs:
+
+   CertificateArn:
+      Description: ARN of the certificate.
+      Value:
+         Ref: Certificate

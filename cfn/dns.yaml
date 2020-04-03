@@ -1,0 +1,133 @@
+---
+
+
+AWSTemplateFormatVersion: 2010-09-09
+
+
+Description: 'Blog: DNS.'
+
+
+Metadata:
+
+   AWS::CloudFormation::Interface:
+      ParameterLabels:
+         Branch:
+            default: Branch
+         CertificateArn:
+            default: SSL certificate
+         CloudFrontPriceClass:
+            default: CloudFront price class
+         ContentBucket:
+            default: S3 Bucket
+         DeploymentType:
+            default: Deployment type
+         HostedZoneId:
+            default: Hosted zone
+         RootDomain:
+            default: Root domain
+         WebsiteCodename:
+            default: Website codename
+
+      ParameterGroups:
+         -
+            Label: General
+            Parameters:
+               - DeploymentType
+               - Branch
+         -
+            Label: CloudFront
+            Parameters:
+               - DistributionDomainName
+         -
+            Label: Route 53
+            Parameters:
+               - HostedZoneId
+         -
+            Label: DNS
+            Parameters:
+               - RootDomain
+               - WebsiteCodename
+
+
+Parameters:
+
+   Branch:
+      Description: Branch.
+      Type: String
+
+   DeploymentType:
+      Description: Type of the deployment.
+      Type: String
+      AllowedValues:
+         - main
+         - preview
+
+   DistributionDomainName:
+      Description: Domain Name of the CloudFront distribution.
+      Type: String
+
+   HostedZoneId:
+      Description: ID of the Route 53 hosted zone in which to create DNS records.
+      Type: AWS::Route53::HostedZone::Id
+
+   RootDomain:
+      Description: Root domain.
+      Type: String
+      AllowedPattern: ^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$
+      ConstraintDescription: must abide by domain name restrictions
+
+   WebsiteCodename:
+      Description: Base domain of the website.
+      Type: String
+
+
+Conditions:
+
+   MainDeployment:
+      Fn::Equals:
+         -
+            Ref: DeploymentType
+         - main
+
+   PreviewDeployment:
+      Fn::Equals:
+         -
+            Ref: DeploymentType
+         - preview
+
+
+Resources:
+
+   IPv4Record:
+      Type: AWS::Route53::RecordSet
+      Properties:
+         AliasTarget:
+            DNSName:
+               Ref: DistributionDomainName
+            HostedZoneId: Z2FDTNDATAQYW2
+         HostedZoneId: !Ref HostedZoneId
+         Name:
+            Fn::If:
+               - MainDeployment
+               -
+                  Fn::Sub: '${WebsiteCodename}.www.${RootDomain}'
+               -
+                  Fn::Sub: '${Branch}.${WebsiteCodename}.www.${RootDomain}'
+         Type: A
+
+   IPv6Record:
+      Type: AWS::Route53::RecordSet
+      Properties:
+         AliasTarget:
+            DNSName:
+               Ref: DistributionDomainName
+            HostedZoneId: Z2FDTNDATAQYW2
+         HostedZoneId: !Ref HostedZoneId
+         Name:
+            Fn::If:
+               - MainDeployment
+               -
+                  Fn::Sub: '${WebsiteCodename}.www.${RootDomain}'
+               -
+                  Fn::Sub: '${Branch}.${WebsiteCodename}.www.${RootDomain}'
+         Type: AAAA

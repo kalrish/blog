@@ -1,8 +1,8 @@
 # Site settings
 title: Sanctum
 author: David Joaquín Shourabi Porcel
-baseurl: "/blog"
-url: "https://www.davidjsp.eu"
+baseurl: ''
+url: https://blog.www.djsp.eu/
 email:
     author: david@davidjsp.eu
     comments: david@davidjsp.eu

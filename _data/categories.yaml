@@ -1,0 +1,54 @@
+---
+
+subcategories_name:
+   de: Kategorien
+   en: Categories
+   es: Categorías
+
+subcategories:
+   -
+      id: ideas
+      name:
+         de: Ideen
+         en: Ideas
+         es: Ideas
+   -
+      id: interests
+      name:
+         de: Interessen
+         en: Interests
+         es: Intereses
+      subcategories_name:
+         de: Themata
+         en: Topics
+         es: Temas
+      subcategories:
+         -
+            id: history
+            name:
+               de: Geschichte
+               en: History
+               es: Historia
+         -
+            id: programming
+            name:
+               de: Programmierung
+               en: Programming
+               es: Programación
+   -
+      id: creations
+      name:
+         de: Schöpfungen
+         en: Creations
+         es: Creaciones
+      subcategories_name:
+         de: Gattungen
+         en: Genres
+         es: Géneros
+      subcategories:
+         -
+            id: tales
+            name:
+               de: Erzählungen
+               en: Tales
+               es: Relatos

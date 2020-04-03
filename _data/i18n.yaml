@@ -1,0 +1,101 @@
+---
+
+index:
+   en: Index
+   es: Índice
+   de: Verzeichnis
+
+archive:
+   en: Archive
+   es: Archivo
+   de: Archiv
+
+about:
+   en: About
+   es: Meta
+   de: Über das Blog
+
+tags:
+   en: Tags
+   es: Etiquetas
+   de: Schlagworte
+
+no_comments:
+   en: No comments
+   es: No hay comentarios
+   de: Keine Kommentare
+
+comments:
+   en: Comments
+   es: Comentarios
+   de: Kommentare
+
+send_comment_per_email:
+   en: Send comment per e-mail
+   es: Enviar comentario por e-mail
+   de: Kommentar per E-Mail senden
+
+date_start:
+   en: on the
+   es: el
+   de: den
+
+footnotes:
+   en: Notes
+   es: Notas
+   de: Noten
+
+do_not_change_subject:
+   en: Please do not change preset subject line
+   es: Manténgase el asunto preestablecido
+   de: Betreffzeile der Nachricht bitte nicht ändern
+
+month_names:
+   -
+      en: January
+      es: Enero
+      de: Januar
+   -
+      en: February
+      es: Febrero
+      de: Februar
+   -
+      en: March
+      es: Marzo
+      de: März
+   -
+      en: April
+      es: Abril
+      de: April
+   -
+      en: May
+      es: Mayo
+      de: Mai
+   -
+      en: June
+      es: Junio
+      de: July
+   -
+      en: July
+      es: Julio
+      de: Juli
+   -
+      en: August
+      es: Agosto
+      de: August
+   -
+      en: September
+      es: Septiembre
+      de: September
+   -
+      en: October
+      es: Octubre
+      de: Oktober
+   -
+      en: November
+      es: Noviembre
+      de: November
+   -
+      en: December
+      es: Diciembre
+      de: Dezember

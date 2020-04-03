@@ -119,38 +119,38 @@ Resources:
                   ResponsePagePath: /404
                   ErrorCachingMinTTL: 60
             DefaultCacheBehavior:
+               TargetOriginId: s3
+               ViewerProtocolPolicy: redirect-to-https
+               # ViewerProtocolPolicy: https-only
+               ForwardedValues:
+                  QueryString: false
+               Compress: true
                AllowedMethods:
                   - GET
                   - HEAD
                CachedMethods:
                   - GET
                   - HEAD
-               Compress: true
-               DefaultTTL: 3
-               ForwardedValues:
-                  QueryString: false
-               MaxTTL: 4
-               MinTTL: 2
-               TargetOriginId: s3
-               ViewerProtocolPolicy: redirect-to-https
-               # ViewerProtocolPolicy: https-only
+               DefaultTTL: 80
+               MaxTTL: 240
+               MinTTL: 60
             CacheBehaviors:
                -
                   PathPattern: /
+                  TargetOriginId: s3
+                  ViewerProtocolPolicy: redirect-to-https
+                  ForwardedValues:
+                     QueryString: false
+                  Compress: false
                   AllowedMethods:
                      - GET
                      - HEAD
-                  Compress: false
-                  ForwardedValues:
-                     QueryString: false
                   LambdaFunctionAssociations:
                      -
                         EventType: viewer-request
                         IncludeBody: false
                         LambdaFunctionARN:
                            Fn::Sub: arn:${AWS::Partition}:lambda:${AWS::Region}:${AWS::AccountId}:function:${LanguageRedirectionFunctionName}:${LanguageRedirectionFunctionVersion}
-                  TargetOriginId: s3
-                  ViewerProtocolPolicy: redirect-to-https
             HttpVersion: http2
             IPV6Enabled: true
             Origins:

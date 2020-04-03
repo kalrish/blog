@@ -1,0 +1,49 @@
+---
+
+kalrish:
+   name:
+      list:
+         en: Kalrish
+         es: Kalrish
+         de: Kalrish
+      full:
+         en: Kalrish
+         es: Kalrish
+         de: Kalrish
+   desc:
+      list:
+         en: null
+         es: Kalrish es un personaje recurrente en muchos de mis relatos.
+         de: null
+
+abi:
+   name:
+      list:
+         en: ABI
+         es: null
+         de: null
+      full:
+         en: ABI
+         es: null
+         de: null
+   desc:
+      list:
+         en: null
+         es: null
+         de: null
+
+rome-kingdom:
+   name:
+      list:
+         en: Roman Kingdom
+         es: monarquía romana
+         de: römische Königszeit
+      full:
+         en: Roman Kingdom
+         es: Monarquía romana
+         de: Römische Königszeit
+   desc:
+      list:
+         en: null
+         es: Primera etapa de la Roma Antigua, en que fue gobernada por un monarca, extendiéndose desde su legendaria fundación hasta la expulsión de Tarquinio el Soberbio.
+         de: null

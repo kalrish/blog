@@ -1,0 +1,3 @@
+{%- for language in site.data.languages.by.sides -%}
+	<a lang="{{ language }}" href="{{ "/" | append: language | append: "/home" | relative_url }}">{{ site.data.languages.names[language] }}</a>
+{%- endfor -%}

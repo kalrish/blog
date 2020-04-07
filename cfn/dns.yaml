@@ -105,7 +105,8 @@ Resources:
             DNSName:
                Ref: DistributionDomainName
             HostedZoneId: Z2FDTNDATAQYW2
-         HostedZoneId: !Ref HostedZoneId
+         HostedZoneId:
+            Ref: HostedZoneId
          Name:
             Fn::If:
                - MainDeployment
@@ -122,7 +123,8 @@ Resources:
             DNSName:
                Ref: DistributionDomainName
             HostedZoneId: Z2FDTNDATAQYW2
-         HostedZoneId: !Ref HostedZoneId
+         HostedZoneId:
+            Ref: HostedZoneId
          Name:
             Fn::If:
                - MainDeployment

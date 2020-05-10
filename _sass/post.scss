@@ -114,6 +114,14 @@ main {
 	color: #4155f4;
 }
 
+#post-content a.http::after {
+	content: "\e164";
+}
+
+#post-content a.https::after {
+	content: "\e164";
+}
+
 #post-content > section {
 	margin-top: 22px;
 	margin-bottom: 22px;

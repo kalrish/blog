@@ -5,8 +5,14 @@ header: link
 navibar: standard
 ---
 {%- include this_tag -%}
-<header id="tag-intro">
-	<h2 id="tag-title">{{ this_tag.name.full[page.lang] }}</h2>
+<header
+	id="tag-intro"
+	>
+	<h2
+		id="tag-title"
+		>
+		{{ this_tag.name.full[page.lang] }}
+	</h2>
 	{{ content }}
 </header>
 {%- assign posts = site.tags[this_tag_id] -%}

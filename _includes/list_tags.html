@@ -1,6 +1,10 @@
 {%- for tag in include.tags -%}
 	{%- assign tag_name = site.data.tags[tag].name.list[page.lang] -%}
 	{%- if tag_name -%}
-	<a class="tag-link" {% if site.data.tags[tag].desc.list[page.lang] %}title="{{ site.data.tags[tag].desc.list[page.lang] }}"{% endif %} rel="tag" href="{{ "/tags/" | append: page.lang | append: "/" | append: tag | relative_url }}">{{ tag_name }}</a>
+	<a
+		class="tag-link" {% if site.data.tags[tag].desc.list[page.lang] %}title="{{ site.data.tags[tag].desc.list[page.lang] }}"{% endif %} rel="tag" href="{{ "/tags/" | append: page.lang | append: "/" | append: tag | relative_url }}"
+		>
+		{{ tag_name }}
+	</a>
 	{%- endif -%}
 {%- endfor -%}

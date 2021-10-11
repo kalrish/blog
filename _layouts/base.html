@@ -1,14 +1,43 @@
 ---
 ---
 <!DOCTYPE html>
-<html>
-	<head>
-		<title {% if page.lang %}lang="{{ page.lang }}"{% endif %}>{%- include title/{{ layout.title }}.html -%}</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="author" href="/{% if page.lang %}{{ page.lang }}/home{% endif %}">
-		<link rel="icon" type="image/svg+xml" href="{{ "/assets/favicon/favicon.svg" | relative_url }}">
-		<link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon/favicon-16x16.png" | relative_url }}">
-		<link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon/favicon-32x32.png" | relative_url }}">
+<html
+	>
+
+	<head
+		>
+		<title
+			{% if page.lang %}lang="{{ page.lang }}"{% endif %}
+			>
+			{%- include title/{{ layout.title }}.html -%}
+		</title>
+
+		<meta
+			content="width=device-width, initial-scale=1"
+			name="viewport"
+			>
+
+		<link
+			href="/{% if page.lang %}{{ page.lang }}/home{% endif %}"
+			rel="author"
+			>
+		<link
+			href="{{ "/assets/favicon/favicon.svg" | relative_url }}"
+			rel="icon"
+			type="image/svg+xml"
+			>
+		<link
+			href="{{ "/assets/favicon/favicon-16x16.png" | relative_url }}"
+			rel="icon"
+			sizes="16x16"
+			type="image/png"
+			>
+		<link
+			href="{{ "/assets/favicon/favicon-32x32.png" | relative_url }}"
+			rel="icon"
+			sizes="32x32"
+			type="image/png"
+			>
 		{%- capture preamble -%}
 			$baseurl: "{{ site.baseurl }}";
 			{% if page.lang %}
@@ -40,24 +69,59 @@
 			{%- include head/{{ layout.head }}.html -%}
 		{%- endif -%}
 	</head>
-	<body>
-		<header id="site-header">
+
+	<body
+		>
+		<header
+			id="site-header"
+			>
 			{%- include header/{{ layout.header }}.html -%}
 		</header>
-		<nav id="navibar" lang="{{ page.lang }}">
+		<nav
+			id="navibar"
+			lang="{{ page.lang }}"
+			>
 			{%- include navibar/{{ layout.navibar }}.html -%}
 		</nav>
-		<main>
+		<main
+			>
 			{{ content }}
 		</main>
-		<footer id="site-footer">
-			<small id="copyright-disclaimer">Copyright &copy; <a rel="author" href="https://www.djsp.eu/">{{ site.author }}</a></small>
-			<nav id="site-footer-right">
+		<footer
+			id="site-footer"
+			>
+			<small
+				id="copyright-disclaimer"
+				>
+				Copyright &copy; <a rel="author" href="https://www.djsp.eu/">{{ site.author }}</a>
+			</small>
+			<nav
+				id="site-footer-right"
+				>
 				<!--<a id="site-footer-link-email-site" href="mailto:{{ site.email.site }}">{{ site.email.site }}</a>-->
-				<a class="site-footer-icon-link" href="mailto:{{ site.email.site }}">{% include embed/svg.html name="mail" class="site-footer-icon" %}</a>
-				<a class="site-footer-icon-link" rel="external" href="https://github.com/kalrish/blog">{% include embed/svg.html name="github" class="site-footer-icon" %}</a>
-				<a class="site-footer-icon-link" rel="alternate" type="application/atom+xml" href="{{ "/feed.xml" | absolute_url }}">{% include embed/svg.html name="feed" class="site-footer-icon" %}</a>
+				<a
+					class="site-footer-icon-link"
+					href="mailto:{{ site.email.site }}"
+					>
+					{% include embed/svg.html name="mail" class="site-footer-icon" %}
+				</a>
+				<a
+					class="site-footer-icon-link"
+					href="https://github.com/kalrish/blog"
+					rel="external"
+					>
+					{% include embed/svg.html name="github" class="site-footer-icon" %}
+				</a>
+				<a
+					class="site-footer-icon-link"
+					href="{{ "/feed.xml" | absolute_url }}"
+					rel="alternate"
+					type="application/atom+xml"
+					>
+					{% include embed/svg.html name="feed" class="site-footer-icon" %}
+				</a>
 			</nav>
 		</footer>
 	</body>
+
 </html>

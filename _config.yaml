@@ -12,9 +12,6 @@ launchdate: 2018-02-05
 # Build settings
 strict_front_matter: true
 excerpt_separator: <!--more-->
-compress_html:
-    clippings: all
-    comments: all
 markdown: kramdown
 kramdown:
     input: Markdown
